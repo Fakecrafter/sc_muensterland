@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Container from '../components/container.astro';
+import Sectionhead from "@components/sectionhead.astro";
+
+const trainingszeiten = [
+  { day: 'Montag', times: [
+    { time: '10:00 - 11:00', program: 'Yoga' },
+    { time: '11:00 - 12:00', program: 'Kinderturnen' },
+  ]},
+  { day: 'Dienstag', times: [
+    { time: '14:00 - 15:00', program: 'Fußballtraining' },
+    { time: '15:00 - 16:00', program: 'Basketball' },
+  ]},
+  { day: 'Mittwoch', times: [
+    { time: '09:00 - 10:00', program: 'Schwimmen' },
+    { time: '10:00 - 11:00', program: 'Pilates' },
+  ]},
+  { day: 'Donnerstag', times: [
+    { time: '16:00 - 17:00', program: 'Tennis' },
+    { time: '17:00 - 18:00', program: 'Boxen' },
+  ]},
+  { day: 'Freitag', times: [
+    { time: '18:00 - 19:00', program: 'Fitness' },
+    { time: '19:00 - 20:00', program: 'Zumba' },
+  ]},
+  { day: 'Samstag', times: [
+    { time: '10:00 - 11:00', program: 'Kinderfußball' },
+    { time: '11:00 - 12:00', program: 'Leichtathletik' },
+  ]},
+  { day: 'Sonntag', times: [
+    { time: '12:00 - 13:00', program: 'Meditation' },
+    { time: '13:00 - 14:00', program: 'Volleyball' },
+  ]},
+];
+---
+
+<Layout>
+  <Container class="p-8 text-center">
+    <Sectionhead>
+        <Fragment slot="title">Trainingszeiten</Fragment>
+        <Fragment slot="desc">Hier sind ein paar wichtige Informationen bla bla blub. Am Tag Dienstag gibt es eine Ausnahme XY.</Fragment>
+    </Sectionhead>
+    <main class="mt-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {trainingszeiten.map(({ day, times }) => (
+        <div key={day} class="bg-lime-200 shadow-md rounded-lg p-6 hover:bg-black hover:text-white transition-colors duration-300">
+          <h2 class="text-2xl font-semibold mb-4">{day}</h2>
+          <ul class="list-disc ml-4 text-left">
+            {times.map(({ time, program }) => (
+              <li key={time} class="mb-2">
+                <span class="font-bold">{time}:</span> {program}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+    </main>
+  </Container>
+</Layout>

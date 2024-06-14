@@ -1,0 +1,64 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon/components";
+
+
+const features = [
+{
+    title: "Vielfältige Sportarten",
+    description:
+    "Entdecke eine breite Palette an Sportarten, von Fußball und Tennis bis hin zu Schwimmen und Leichtathletik. Für jedes Alter und jedes Niveau ist etwas dabei.",
+    icon: "mdi:table-tennis",
+},
+{
+    title: "Professionelles Training",
+    description:
+    "Unsere qualifizierten Trainer und Trainerinnen bieten professionelles Training und individuelle Betreuung, um deine sportlichen Ziele zu erreichen.",
+    icon: "mdi:whistle",
+},
+{
+title: "Moderne Sportanlagen",
+    description:
+    "Trainiere in unseren erstklassigen, modernen Sportanlagen mit neuester Ausstattung und bestens gepflegten Plätzen und Hallen.",
+    icon: "mdi:stadium",
+},
+{
+title: "Gemeinschaft und Teamgeist",
+    description:
+    "Erlebe die starke Gemeinschaft und den Teamgeist in unserem Verein. Werde Teil eines motivierten und unterstützenden Teams.",
+    icon: "mdi:people-outline",
+},
+{
+title: "Veranstaltungen und Wettkämpfe",
+    description:
+    "Nimm an aufregenden Veranstaltungen und Wettkämpfen teil und zeige dein Können. Regelmäßige Events sorgen für Abwechslung und Spannung.",
+    icon: "mdi:medal",
+},
+{
+title: "Kinder- und Jugendprogramme",
+    description:
+    "Fördere den sportlichen Nachwuchs mit unseren speziellen Kinder- und Jugendprogrammen. Spielerisches Training und altersgerechte Förderung stehen im Vordergrund.",
+    icon: "mdi:baby-face",
+},
+];
+---
+
+<div class="mt-16 md:mt-0">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">Das bieten wir dir ...</h2>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {
+    features.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="mt-1 bg-black rounded-full  p-2 w-12 h-12 shrink-0">
+          <Icon class="text-white w-full h-full" name={item.icon} />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>
