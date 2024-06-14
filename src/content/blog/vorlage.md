@@ -6,7 +6,7 @@ image: {
     src: "https://images.unsplash.com/photo-1627163439134-7a8c47e08208?&fit=crop&w=430&h=240",
     alt: "data structures & algorithms"
 }
-publishDate: "2222-22-22 22:22"
+publishDate: "2022-11-11 22:22"
 category: "Technology"
 author: "Peter Parker"
 tags: [tag1,tag2,tagX]
